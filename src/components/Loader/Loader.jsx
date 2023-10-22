@@ -5,7 +5,7 @@ const Loader = () => {
     <ImageList cols={5} gap={10}>
       {Array.from({ length: 30 }).map((_, index) => (
         <ImageListItem key={index}>
-          <Skeleton animation="wave" variant="rect" />
+          <Skeleton animation="wave" variant="rect" width={225} height={225} />
         </ImageListItem>
       ))}
     </ImageList>

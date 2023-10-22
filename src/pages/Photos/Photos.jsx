@@ -26,26 +26,27 @@ const Photos = () => {
 
   const isLoading = navigation.state === "loading";
 
-  console.log({ photos, isLoading });
+  //console.log({ photos, isLoading });
 
-  return <>
-  <Typography variant='h5' gutterBottom>
-    Photos
-  </Typography>
-  <Grid container spacing={2}>
-    {isLoading ? (
-    <Loader />
-    ) : (
-    <ImageList gap={10} cols={5}>
-    {photos.map((photo) => (
-      <ImageListItem key={photo.id}>
-        <img src={photo.url} alt={photo.title}></img>
-      </ImageListItem>
-    ))}
-    </ImageList>
-    )}
-  </Grid>
+  return (<>
+    <Typography variant='h5' gutterBottom>
+      Photos
+    </Typography>
+    <Grid container spacing={2}>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <ImageList gap={10} cols={5}>
+          {photos.map((photo) => (
+            <ImageListItem key={photo.id}>
+              <img src={photo.url} alt={photo.title} ></img>
+            </ImageListItem>
+          ))}
+        </ImageList>
+      )}
+    </Grid>
   </>
+  )
 };
 
 export { Photos }
